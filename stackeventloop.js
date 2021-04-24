@@ -1,5 +1,4 @@
 /*
-
 ? ****************************************************************************************
      _____________   ______________________
     [_HEAP Memory_] [______Call Stack______]  _________________
@@ -74,3 +73,29 @@ Output:
     -One! - The stack is empty and then the promise resolves and the function is added to the stack continuing where it had left off by logging the 'res' variable.
 
 */
+
+
+//Synchronous
+
+console.time('Sync');
+[1,2,3,4].forEach((i) => {
+    console.log('processing sync');
+})
+console.timeEnd('Sync');
+
+
+//Asynchronous
+const asyncForEach = (array, cb) => {
+    console.time('Async')
+    array.forEach(() =>{
+        setTimeout(cb, 0);
+    })
+    console.timeEnd('Async');
+};
+
+asyncForEach([1,2,3,4], () =>{
+    console.log('processing async');
+});
+
+
+

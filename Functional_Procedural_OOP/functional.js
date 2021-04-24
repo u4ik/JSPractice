@@ -15,7 +15,6 @@ const validator = (value, flag, validatorValue) => {
         //returning true
         return value.trim().length > validatorValue;
     };
-
 };
 
 const getUserInput = (inputElementId) => {

@@ -38,12 +38,12 @@ const fastFunction = memoize(ridiculouslySlow);
 
 
 console.time();
-// console.log(ridiculouslySlow(10000000000)) //Slow OMG Takes 1 Second!!
-console.log(fastFunction(1000000000)); //First Run....
-
-
+console.log(ridiculouslySlow(10000000000)) //Slow OMG Takes Forever!!
+// console.log(fastFunction(1000000000)); //First Run....
 console.timeEnd();
+
+
 console.time();
-// console.log(ridiculouslySlow(10000000000)) //Still takes forever the 2nd time around!!
-console.log(fastFunction(1000000000)); //Faster the Second run!! 
+console.log(ridiculouslySlow(10000000000)) //Still takes forever the 2nd time around!!
+// console.log(fastFunction(1000000000)); //Faster the Second run!! 
 console.timeEnd();
