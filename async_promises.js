@@ -1,5 +1,3 @@
-
-
 const results = async () => {
     try {
         await fetch('https://swapi.dev/api/people/1')
@@ -37,13 +35,35 @@ const fetchFunction = async () => {
     try {
         const response = await fetch('https://swapi.dev/api/people/1')
         const result = await response.json()
-        displayResults(result.name)
-
+        displayResults(result.name);
     } catch (err) {
         console.log(err)
     }
 };
 fetchFunction();
+
+
+
+
+
+const fetch = require('node-fetch');
+const fetchFunction = async () => {
+    try {
+        const response = await fetch('https://swapi.dev/api/people/1')
+        const result = await response.json()
+
+        displayResults(result.name)
+    } catch (err) {
+        console.log(err)
+    }
+
+}
+
+fetchFunction();
+
+
+
+
 
 const displayResults = (name) => {
 
