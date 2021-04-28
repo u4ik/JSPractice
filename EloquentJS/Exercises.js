@@ -108,7 +108,7 @@ console.log(journal)
 
 
 //Infinite For Loop?
-x = 1
+x = 2
 
 for (let i = 0; i = x; i++) {
     console.log('hello')

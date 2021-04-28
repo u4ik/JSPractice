@@ -1,24 +1,34 @@
-const results = async () => {
+const fetch = require('node-fetch');
+const results = () => {
+
+    fetch('https://swapi.dev/api/people/1')
+        .then(rest => rest.json())
+        .then(json => {
+            displayName(json);
+            console.log('hello');
+        })
+        .catch((err) => {
+            console.log('Hey you messed up')
+        });
+};
+
+const results2 = async () => {
     try {
-        await fetch('https://swapi.dev/api/people/1')
-            .then(rest => rest.json())
-            .then(json => {
-
-                displayName(json);
-
-            });
-
+        const response = await fetch('https://swapi.dev/api/people/1');
+        const result = await response.json();
+        displayResults(result.name);
     } catch (err) {
-        console.log('Hey you messed up');
-    }
+        console.log(err);
+    };
 };
 
 
+results2();
 
 displayName = (data) => {
     console.log(data.name)
 
-}
+};
 
 
 
@@ -31,16 +41,6 @@ async function newFunc() {
 
 const fetch = require('node-fetch');
 
-const fetchFunction = async () => {
-    try {
-        const response = await fetch('https://swapi.dev/api/people/1')
-        const result = await response.json()
-        displayResults(result.name);
-    } catch (err) {
-        console.log(err)
-    }
-};
-fetchFunction();
 
 
 
@@ -49,15 +49,15 @@ fetchFunction();
 const fetch = require('node-fetch');
 const fetchFunction = async () => {
     try {
-        const response = await fetch('https://swapi.dev/api/people/1')
-        const result = await response.json()
+        const response = await fetch('https://swapi.dev/api/people/1');
+        const result = await response.json();
 
-        displayResults(result.name)
+        displayResults(result.name);
     } catch (err) {
-        console.log(err)
-    }
+        console.log(err);
+    };
 
-}
+};
 
 fetchFunction();
 
@@ -68,9 +68,9 @@ fetchFunction();
 const displayResults = (name) => {
 
 
-    console.log(name)
+    console.log(name);
 
-}
+};
 
 
 
@@ -84,10 +84,10 @@ const results2 = () => {
 
             console.log(json.name);
 
-        }).catch(err => console.log(err))
+        }).catch(err => console.log(err));
 
-}
-results2()
+};
+results2();
 
 
 
@@ -112,15 +112,15 @@ let rmFetch = fetch('https://rickandmortyapi.com/api/character');
 function swFetchFunc() {
     swFetch.then(res => res.json())
         .then(swData => {
-            return swData
+            return swData;
         });
 
-}
+};
 
 function rmFetchFunc() {
     rmFetch.then(res => res.json())
         .then(rmData => {
-            return rmData
+            return rmData;
         });
 };
 
@@ -138,7 +138,7 @@ const fetchCats = async () => {
     const response = await fetch('https://cat-fact.herokuapp.com/facts/random?animal_type=dog')
     const result = await response.json();
     console.log(result.text);
-}
+};
 
 
-fetchCats()
+fetchCats();
