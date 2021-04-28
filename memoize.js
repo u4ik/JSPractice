@@ -1,7 +1,6 @@
 //Memoization allows us to speed up our functions
 //-Store the result of expensive function calls and returning the cache {}
 
-
 const phoneBook = {};
 
 function humanPhoneNumber(number) {
@@ -9,9 +8,9 @@ function humanPhoneNumber(number) {
         "(" + number.substring(0, 3) + ")" + number.substring(3, 6) + "-" + number.substring(6, number.length)
 };
 
-console.log(humanPhoneNumber('3175555555'));
+// console.log(humanPhoneNumber('3175555555'));
 
-console.log(phoneBook);
+// console.log(phoneBook);
 
 
 const ridiculouslySlow = (num) => {

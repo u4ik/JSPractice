@@ -68,12 +68,3 @@ var reverse = function(x) {
 };
 console.log(reverse(x));
 
-
-// Write code below that sums all even products of x*y for where x = 1..100
-// y = 1..200
-
-// Take that sum and find the nearest prime number!
-
-console.log(((s=>{for(i=0;i<s;i++)s%i==0?s--:null;return s}))(((s)=>{for(x=1;x<100;x++){for(y=1;y<200;y++){p=x*y;p%2==0?s+=p:null}}return s})(0)))
-
-//My greatest creation^
