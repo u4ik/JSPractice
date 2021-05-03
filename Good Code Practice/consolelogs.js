@@ -11,3 +11,8 @@ console.table({x,y,z}); //Display table, great for arrays
 console.time('Looper');
 while(x<10000000) x++
 console.timeEnd('Looper') // ~11ms
+
+//Console log a message, with color to indicate importance within the web browser's console.
+console.log('%c Important! ', 'color:blue; font-size:2em; background: grey; border: 1px solid blue' );
+
+
