@@ -12,7 +12,5 @@ console.time('Looper');
 while(x<10000000) x++
 console.timeEnd('Looper') // ~11ms
 
-//Console log a message, with color to indicate importance within the web browser's console.
-console.log('%c Important! ', 'color:blue; font-size:2em; background: grey; border: 1px solid blue' );
-
-
+//Console log a message, with color to indicate importance between logs within the web browser's console.
+console.log("%c Important! ", "color:red; font-size:1.5em; background: rgba(0,0,0,.5); border: 1px solid blue;font-weight: 600;border-radius:20px;padding:1px");
