@@ -98,7 +98,7 @@ const codeBlocker = () => {
     // })
 
     //! Speedy boi!!!!
-    return Promise.resolve().then(v => {
+    return Promise.resolve().then(() => {
         let i = 0;
         while (i < 1000000000) { i++ }
         return '??????';
@@ -160,7 +160,7 @@ const makeSmoothie2 = () => {
 // makeSmoothie2().then(console.log)
 
 //? Promise.all async
-
+// -Allows the fetching to occur concurrently or at the same time.
 const makeSmoothie3 = async () => {
     const a = getFruit('pineapple');
     const b = getFruit1('strawberry');
