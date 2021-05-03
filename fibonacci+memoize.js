@@ -24,6 +24,9 @@ let f = (n,prevValues = []) => {
 //     pv[n] = r;
 //     return r;
 // } 
+
+
+
 for (let i = 1; i <= 1000; i++) a.push(f(i));
 console.time('Time');
 console.log(a);
