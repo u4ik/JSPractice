@@ -1,10 +1,13 @@
 const fetch = require('node-fetch');
 
+<<<<<<< HEAD
 fetch('https://api.nasa.gov/insight_weather/?api_key=EUgijo5Du7IBTWLZJ1E3fMhb8PCnVbvuHKoerj7T&feedtype=json&ver=1.0')
 
 .then(res=> res.json())
 .then(json => console.log(json))
 
+=======
+>>>>>>> 324ec015ce6108b168adc11bdf291771b985a216
 
 const newFunc = (flag) => {
     // await results();
