@@ -1,3 +1,5 @@
+//(...args) - Rest Parameter - allows infinite arguments, which then the values get stored into an array. args = [arg1,arg2,arg3,arg4]
+
 class sortStuff {
     static someFuncToSortArrays = (...args) => {
         let sortArr = [];

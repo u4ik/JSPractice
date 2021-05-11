@@ -1,4 +1,4 @@
-//Tax Checker
+// Tax Checker
 tax = .07
 cost = 563
 
@@ -20,8 +20,8 @@ console.log(square(y));
 console.log(y);
 
 
-//IIFE - Immediately Invoked Function Expression
-//(...args) - Rest Parameter - allows infinite arguments, which then the values get stored into an array. args = [arg1,arg2,arg3,arg4]
+// IIFE - Immediately Invoked Function Expression
+
 
 
 (function test(...args) {
@@ -29,7 +29,7 @@ console.log(y);
 })('timmy')
 
 
-//Closure??
+// Closure??
 
 let closureFunc = (adjective) => {
     return (noun) => {
@@ -40,4 +40,21 @@ let closureFunc = (adjective) => {
 let newAdj = closureFunc('grey');
 
 console.log(newAdj('cat'));
+
+//************************************************* */
+// More Closure?!? 
+
+let outer = (func) => {
+    return func
+};
+
+console.log(outer(() => {
+    return 'secret'
+})); // undefined
+
+let innerAcess = outer(() => {
+    return 'secret'
+});
+
+console.log(innerAcess()); // secret
 
