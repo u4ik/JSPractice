@@ -22,8 +22,6 @@ console.log(y);
 
 // IIFE - Immediately Invoked Function Expression
 
-
-
 (function test(...args) {
     console.log('hello',args[0]);
 })('timmy')
