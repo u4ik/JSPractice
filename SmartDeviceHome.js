@@ -20,9 +20,9 @@ const devices = [
 ];
 
 function listCommands(deviceId) {
-    devices.map(device => {
+    devices.forEach(device => {
         if (device.id === deviceId) {
-            commands.map(command => {
+            commands.forEach(command => {
                 if (device.capabilities.includes(command.type) && command.active === true) {
                     console.log(command.name)
                     return command.name
@@ -34,8 +34,8 @@ function listCommands(deviceId) {
 
 function checkValid(commandName, deviceId) {
 
-    commands.map(command => {
-        devices.map(device => {
+    commands.forEach(command => {
+        devices.forEach(device => {
             if (command.name.includes(commandName) && device.id === deviceId) {
                 return true
             } else {

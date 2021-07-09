@@ -1,13 +1,10 @@
 const fetch = require('node-fetch');
 
-<<<<<<< HEAD
 fetch('https://api.nasa.gov/insight_weather/?api_key=EUgijo5Du7IBTWLZJ1E3fMhb8PCnVbvuHKoerj7T&feedtype=json&ver=1.0')
 
-.then(res=> res.json())
-.then(json => console.log(json))
+    .then(res => res.json())
+    .then(json => console.log(json))
 
-=======
->>>>>>> 324ec015ce6108b168adc11bdf291771b985a216
 
 const newFunc = (flag) => {
     // await results();
@@ -88,10 +85,6 @@ function fetchAll() {
 // fetchAll();
 
 
-const tick = Date.now();
-
-const log = v => console.log(`${v} \n Elapsed: ${Date.now() - tick}ms`);
-
 const codeBlocker = () => {
     //! Slow!
     // let i = 0;
@@ -99,23 +92,29 @@ const codeBlocker = () => {
     // return 'Loops Done!'
 
     //! Close, but no cigar, still slow!
-    // return new Promise((resolve, reject) => {
-    //     let i = 0;
-    //     while (i < 1000000000) { i++ };
-    //     resolve('Loops Done!')
-    // })
+    new Promise((resolve, reject) => {
+        let i = 0;
+        while (i < 1000000000) { i++ };
+        return resolve('Loops Done!')
+    })
 
     //! Speedy boi!!!!
-    return Promise.resolve().then(() => {
-        let i = 0;
-        while (i < 1000000000) { i++ }
-        return '??????';
-    });
+
+
+
+    // return Promise.resolve('Loop is done').then((data) => {
+    //     let i = 0;
+    //     while (i < 1000000000) { i++ }
+
+    // })
 };
 
-// log('Synchronous 1');
+
+const tick = Date.now();
+const log = v => console.log(`${v} Elapsed: ${Date.now() - tick}ms`);
+// log('Synchronous Start');
 // log(codeBlocker());
-// log('Synchronous 2');
+// log('Synchronous End');
 
 const getFruit1 = async (name) => {
     const fruits = {
@@ -123,26 +122,31 @@ const getFruit1 = async (name) => {
         peach: '🍑',
         strawberry: '🍓'
     };
+    let i = 0;
+    while (i < 1000000000) { i++ }
     //Having async will pretty much wrap the return in a promise resolve
     return fruits[name]
 };
-
-
-// console.log(getFruit1('strawberry'));
-
-
 //? OR
-
-const getFruit = (name) => {
+const getFruit2 = (name) => {
     const fruits = {
         pineapple: '🍍',
         peach: '🍑',
         strawberry: '🍓'
     };
+    let i = 0;
+    while (i < 1000000000) { i++ }
     return Promise.resolve(fruits[name])
 };
+log('Get fruit 1');
+getFruit1('strawberry').then((fruit) => log(fruit));
+log('Get fruit 1 End');
 
-// getFruit('peach').then(console.log);
+log('Get fruit 2');
+getFruit2('peach').then(fruit => log(fruit));
+log('Get fruit 2 End');
+
+
 
 const makeSmoothie = async () => {
     const a = await getFruit('pineapple');
@@ -199,3 +203,5 @@ const fruitInspection = async () => {
 };
 
 fruitInspection();
+
+

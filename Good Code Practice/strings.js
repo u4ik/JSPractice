@@ -5,6 +5,7 @@ const horse = {
 };
 
 function horseAge(str, age){
+    console.log(str,age);
     const ageStr = age > 5 ? 'old' : 'young';
     return `${str[0]}${ageStr} at ${age} years.`;
 };

@@ -8,7 +8,7 @@ function turnOn(machine) {
 var computer = {
     isOn: false
 };
-turnOn(computer)
+turnOn(computer);
 console.log(computer.isOn); //true
 console.log(computer);
 

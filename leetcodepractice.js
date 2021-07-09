@@ -45,13 +45,13 @@ addArrTarget(numArr, target);
 
 //Reverse a number and remove 0 as it's prefix
 
-//Idk wtf I did but this doesn't work anymore lol
+
 let x = 123451234512345 // Reverse output Correct : 543215432154321
 
 let x = 12345123451234512345  // Reverse output : 31543215432154320....adding bigInt numeric literal 'n' 54321543215432155000
 
 let x = -2147483412
-var reverse = function(x) {
+var reverse = function (x) {
     let split;
     if (x > 0) {
         split = x.toString().split('').reverse().join().replace(/,/g, '');
@@ -67,4 +67,52 @@ var reverse = function(x) {
     return parseInt(split);
 };
 console.log(reverse(x));
+
+
+
+//Return first duplicate in an array
+
+
+let arr = [2, 1, 3, 5, 3, 2];
+
+let holdVals = [];
+
+let dupeHolder = [];
+
+for (let i = 0; i < arr.length; i++) {
+    checkVals(i)
+};
+
+function checkVals(i) {
+    if (holdVals.includes(arr[i])) dupeHolder.push(arr[i]);
+    holdVals.push(arr[i]);
+};
+
+console.log(dupeHolder[0]);
+
+
+function firstDuplicate(a) {
+
+    var holdVals = [];
+
+    var dupeHolder = [];
+
+    for (let i = 0; i < a.length; i++) {
+        checkVals(i)
+    };
+
+    function checkVals(i) {
+        if (holdVals.includes(a[i])) dupeHolder.push(a[i]);
+        holdVals.push(a[i]);
+
+    };
+
+    if (dupeHolder.length === 0){
+        return -1
+    }
+    return dupeHolder[0]
+}
+
+
+console.log(firstDuplicate([2, 1, 3, 5, 3, 2]))
 

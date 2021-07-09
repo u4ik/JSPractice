@@ -24,3 +24,4 @@ let pokemon = ['Arbok', 'Raichu', 'Weedle'];
 pokemon = [...pokemon,'Pikachu', 'Bulbasaur'];
 
 console.log(pokemon);
+
