@@ -76,17 +76,15 @@ console.log(mathFunc(add[0](num1, num2), add[1]))
 //*************************************************************************** */
 
 
-let deepCloser = z => z => z => z => {
+let deepClosure = z => z => z => z => {
     return `You found me ${z}!`;
 }
 
-let firstStep = deepCloser()
+let firstStep = deepClosure()
 let secondStep = firstStep();
 let thirdStep = secondStep();
 // let fourthStep = thirdStep(); //! Error fourthStep is not a function
 // console.log(thirdStep(1)); //? Output: You found me 1!
-
-
 
 //*************************************************************************** */
 const name = (username) => {
@@ -94,8 +92,6 @@ const name = (username) => {
         return `Welcome ${username}, ${message}`
     }
 }
-
-
 
 let user = name('Timmy!');
 let message = user('hope you are well!');

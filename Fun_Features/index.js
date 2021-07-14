@@ -17,7 +17,7 @@ let person = {
 // if ('name' in person) console.log('Has name!'); //? Has Name
 
 //? ***********************************************************************************
-// Nullish Coalescing //! Does not work in Node??
+// Nullish Coalescing 
 
 const getUser = (name, hobby, favNum) => {
     name = name || 'Default'
@@ -33,9 +33,9 @@ getUser('Billy', 'Soccer', 0)// { name: 'Billy', hobby: 'Soccer', favNum: 'Defau
 
 const getUser1 = (name, hobby, favNum) => {
 
-    // name = name ?? 'Default'
-    // hobby = hobby ?? 'Default'
-    // favNum = favNum ?? 'Default'
+    name = name ?? 'Default'
+    hobby = hobby ?? 'Default'
+    favNum = favNum ?? 'Default'
 
     console.log({ name, hobby,favNum });
 
@@ -64,7 +64,7 @@ class Person {
 let Amit = new Person('Amit')
 Amit.print();
 
-console.log(Amit.location.street) //! Throws Error
+// console.log(Amit.location.street) //! Throws Error
 
 console.log(Amit?.location?.street)
 
