@@ -47,7 +47,7 @@ getUser1('Billy', 'Soccer', 0)// { name: 'Billy', hobby: 'Soccer', favNum: 'Defa
 
 
 //? ***********************************************************************************
-// Optional Chaining //! Only in browser
+// Optional Chaining //! Not in latest node ? 
 
 class Person {
     constructor(name,location){
