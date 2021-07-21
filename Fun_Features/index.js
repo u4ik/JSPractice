@@ -10,8 +10,8 @@ let x = 1;
 //* Check if there's a property in an object using for IN
 
 let person = {
-    name: "",
-    age: 29
+	name: "",
+	age: 29
 }
 
 // if ('name' in person) console.log('Has name!'); //? Has Name
@@ -20,29 +20,29 @@ let person = {
 // Nullish Coalescing 
 
 const getUser = (name, hobby, favNum) => {
-    name = name || 'Default'
-    hobby = hobby || 'Default'
-    favNum = favNum || 'Default'
-    console.log({ name, hobby,favNum });
+	name = name || 'Default'
+	hobby = hobby || 'Default'
+	favNum = favNum || 'Default'
+	console.log({ name, hobby, favNum });
 }
 getUser() //{ name: Default, hobby: Default, favNum: Default }
-getUser(undefined,undefined) //{ name: Default, hobby: Default, favNum: Default }
+getUser(undefined, undefined) //{ name: Default, hobby: Default, favNum: Default }
 getUser('Billy', 'Soccer', 0)// { name: 'Billy', hobby: 'Soccer', favNum: 'Default } //! Notice the fav Num is set to Default!! 0 is falsy
 
 // Replace OR syntax with ?? - This will check if the value is null or undefined, instead of truthy/falsy.
 
 const getUser1 = (name, hobby, favNum) => {
 
-    name = name ?? 'Default'
-    hobby = hobby ?? 'Default'
-    favNum = favNum ?? 'Default'
+	name = name ?? 'Default'
+	hobby = hobby ?? 'Default'
+	favNum = favNum ?? 'Default'
 
-    console.log({ name, hobby,favNum });
+	console.log({ name, hobby, favNum });
 
 }
 
 getUser1() //{ name: Default, hobby: Default, favNum: Default }
-getUser1(undefined,undefined) //{ name: Default, hobby: Default, favNum: Default }
+getUser1(undefined, undefined) //{ name: Default, hobby: Default, favNum: Default }
 getUser1('Billy', 'Soccer', 0)// { name: 'Billy', hobby: 'Soccer', favNum: 'Default } 
 
 
@@ -50,14 +50,14 @@ getUser1('Billy', 'Soccer', 0)// { name: 'Billy', hobby: 'Soccer', favNum: 'Defa
 // Optional Chaining //! Not in latest node ? 
 
 class Person {
-    constructor(name,location){
-        this.name= name,
-        this.location= location
-    }
+	constructor(name, location) {
+		this.name = name,
+			this.location = location
+	}
 
-    print(){
-        console.log(this);
-    }
+	print() {
+		console.log(this);
+	}
 
 }
 
@@ -69,3 +69,13 @@ Amit.print();
 console.log(Amit?.location?.street)
 
 //? ***********************************************************************************
+// Receiving some output from a function without returning. Using object storage.
+
+function number(x, result) {
+	result[x] = x * x;
+}
+
+let result = {};
+
+number(5, result);
+console.log(result)
