@@ -21,3 +21,26 @@ for (let i = arr.length - 1; i >= 0; i--) {
 console.log(arr); // [ 5, 45, 19 ]
 
 
+//Find duplicates in an array
+
+let arr1 = [1, 2, 3, 4, 5, 6]
+let arr2 = [1, 2, 2, 5, 7, 8]
+let arr3 = [1, 5, 2, 5, 7, 8,7,1]
+
+function checkArr(arr) {
+	const arraywithoutdupes = [...new Set(arr)];
+
+	let duplicates = [...arr];
+	
+	arraywithoutdupes.forEach((item) => {
+		const i = duplicates.indexOf(item)
+		duplicates = duplicates.slice(0,i)
+		.concat(duplicates.slice(i+1,duplicates.length))
+		// console.log(duplicates);
+	})
+	console.log(duplicates)
+	
+}
+
+checkArr(arr3)
+
