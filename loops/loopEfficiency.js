@@ -3,7 +3,7 @@ let stepsArr = new Array(steps)
 
 
 console.time('For of Loop:')
-for (step of new Array(steps) {
+for (step of new Array(steps)) {
     if (step === steps.length) {
         console.log(step);
     }
