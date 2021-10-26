@@ -34,5 +34,3 @@ myTable.setItem('age', 30);
 // console.log(myTable.getItem('firstName'));
 console.log(myTable.table);
 console.table(myTable.table);
-
-//WTF....am I doing....lol
