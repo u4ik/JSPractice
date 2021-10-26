@@ -101,6 +101,27 @@ class createRoomClass {
     }
     
     cleanTable(){
+
+
         console.log(`Cleaning  ${this.table}`);
+    
+        function cleanTableNested (){
+            console.log(this.table);
+        }
+        
+        const cleanTableNestedArrow = () => {
+            console.log(this.table);
+
+        }
+        cleanTableNested.call(this)
+        cleanTableNestedArrow()
+    
+    }
+
+    logTable(){
+        console.log(this.table);
     }
 }
+
+let newRoom = new createRoomClass('new room')
+newRoom.cleanTable()
