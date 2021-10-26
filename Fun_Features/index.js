@@ -43,7 +43,7 @@ const getUser1 = (name, hobby, favNum) => {
 
 getUser1() //{ name: Default, hobby: Default, favNum: Default }
 getUser1(undefined, undefined) //{ name: Default, hobby: Default, favNum: Default }
-getUser1('Billy', 'Soccer', 0)// { name: 'Billy', hobby: 'Soccer', favNum: 'Default } 
+getUser1('Billy', 'Soccer', 0)// { name: 'Billy', hobby: 'Soccer', favNum: 0 } 
 
 
 //? ***********************************************************************************

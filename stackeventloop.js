@@ -49,7 +49,7 @@ console.log('End');
 //Using async/await
 const one = () => Promise.resolve('One!');
 
-const myFunc= async() => {
+const myFunc = async() => {
     console.log('In Function!');
     const res = await one();
     console.log(res);
