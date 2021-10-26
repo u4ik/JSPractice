@@ -1,9 +1,9 @@
-function talk ()  {
+function talk() {
     // console.log(this);
     console.log(this.sound);
 }
 
-const talk2  = () =>  {
+const talk2 = () => {
     // console.log(this);
     console.log(this.sound);
 } // Using this arrow function will log only {} as this
@@ -26,10 +26,10 @@ let boundFunc = talkFunc2.bind(dog)
 // talkFunc2() // woof
 
 class Animal {
-    constructor(sound){
+    constructor(sound) {
         this.sound = sound
     }
-    speak =  () => {
+    speak = () => {
         console.log(this.sound);
     }
 }
@@ -38,14 +38,56 @@ let doggy = new Animal('woof')
 // doggy.speak(); //woof
 
 let animal = {
-    talk : 'woof',
-    speak: () => {
+    talk: 'woof',
+    speakArrow: () => {
         console.log(this.talk);
     },
-    speak2(){
+    speak: function() {
         console.log(this.talk);
     }
 }
 
-animal.speak() // undefined
-animal.speak2() // woof
+animal.speakArrow() // undefined
+animal.speak() // woof
+
+// --------------------------------------------------------------------------------------------
+{
+    this.table = 'window table';
+    
+    function cleanTable () {
+        console.log(this.table); 
+    }
+    const cleanTableArrow = () => {
+        console.log(this.table); 
+    }    
+
+    cleanTable() // undefined
+    cleanTable.call(this) //window table
+    cleanTableArrow() // window table
+
+
+    this.garge = {
+        table: 'garage table'
+    }
+    
+    livingRoom = {
+        table: 'living room table'
+    }
+}        
+
+
+class Method {
+    table = 'method table'
+
+    cleanTableMethod1(){
+        console.log(this.table)
+    }    
+    cleanTableMethod2 =() =>{
+        console.log(this.table)
+    }    
+}    
+
+let m1 = new Method;
+m1.cleanTableMethod1()
+m1.cleanTableMethod2()
+
