@@ -42,7 +42,7 @@ let animal = {
     speakArrow: () => {
         console.log(this.talk);
     },
-    speak: function() {
+    speak: function () {
         console.log(this.talk);
     }
 }
@@ -51,43 +51,56 @@ animal.speakArrow() // undefined
 animal.speak() // woof
 
 // --------------------------------------------------------------------------------------------
-{
-    this.table = 'window table';
+// GLOBAL SCOPE
+// --------------------------------------------------------------------------------------------
+
+this.table = 'window table';
+
+function cleanTable() {
+    console.log(` Cleaning  ${this.table}`);
+}
+const cleanTableArrow = () => {
+    console.log(` Cleaning ${this.table}`);
+}
+
+cleanTable() // undefined
+cleanTable.call(this) //cleaning window table
+cleanTableArrow() // cleaning  window table
+
+this.garage = {
+    table: 'garage table'
+}
+cleanTable.call(this.garage) // cleaning the garage table
+
+livingRoom = {
+    table: 'living room table'
+}
+
+// Using a constructor function to create a room
+let createRoom = function (name) {
+    this.table = `${name}'s room`
+}
+
+const jillsRoom = new createRoom("Jill")
+
+cleanTable.call(jillsRoom) // cleaning Jill's room
+
+// OR
+
+// Adding a prototype to the createRoom constructor function
+createRoom.prototype.cleanTable = function (){
+    console.log(`Cleaning  ${this.table}`);
+}
+
+jillsRoom.cleanTable()
+
+// Can accomplish the same as above by using a class with a method
+class createRoomClass {
+    constructor(name){
+        this.table = `${name}s table`
+    }
     
-    function cleanTable () {
-        console.log(this.table); 
+    cleanTable(){
+        console.log(`Cleaning  ${this.table}`);
     }
-    const cleanTableArrow = () => {
-        console.log(this.table); 
-    }    
-
-    cleanTable() // undefined
-    cleanTable.call(this) //window table
-    cleanTableArrow() // window table
-
-
-    this.garge = {
-        table: 'garage table'
-    }
-    
-    livingRoom = {
-        table: 'living room table'
-    }
-}        
-
-
-class Method {
-    table = 'method table'
-
-    cleanTableMethod1(){
-        console.log(this.table)
-    }    
-    cleanTableMethod2 =() =>{
-        console.log(this.table)
-    }    
-}    
-
-let m1 = new Method;
-m1.cleanTableMethod1()
-m1.cleanTableMethod2()
-
+}
