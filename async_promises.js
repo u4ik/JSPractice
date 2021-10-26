@@ -1,28 +1,5 @@
 const fetch = require('node-fetch');
 
-// fetch('https://api.nasa.gov/insight_weather/?api_key=EUgijo5Du7IBTWLZJ1E3fMhb8PCnVbvuHKoerj7T&feedtype=json&ver=1.0')
-
-//     .then(res => res.json())
-//     .then(json => console.log(json))
-
-
-const newFunc = (flag) => {
-	// await results();
-	console.log('Success in getting Data!', flag);
-};
-//.thens
-const results = () => {
-	fetch('https://swapi.dev/api/people/1')
-		.then(rest => rest.json())
-		.then(json => {
-			displayName(json, '.then()');
-			newFunc('.then()');
-		})
-		.catch((err) => {
-			console.log('Hey you messed up')
-		});
-};
-
 //Async
 const results2 = async () => {
 	try {
@@ -275,6 +252,32 @@ console.log('Continue doing other tasks...')
 
 
 
+let something = true
+const promise = new Promise((resolve, reject) => {
+
+    if (something){
+        resolve('yay! resolved message')
+    } else {
+        throw new Error('Something happened, oh no!')
+    }
+})
+
+// promise.then(resolvedData => {
+//     console.log(resolvedData);
+// }).catch(err => console.log({err}))
+
+const promiseunpacker = async() => {
+    const response = await promise;
+    return await response;
+}
+
+// promiseunpacker().then(i => console.log(i))
+
+;
+(async() => {
+    let res = await promiseunpacker();
+    console.log(res);
+})()
 
 
 
